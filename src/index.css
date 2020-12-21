@@ -66,7 +66,7 @@ body {
 }
 
 .gridSizeSelector {
-    margin-left: 15px;
+    margin-left: 1px;
     margin-top: 48px;
     display: flex;
     flex-direction: column;
@@ -84,6 +84,27 @@ body {
     padding: 10px;
     font-size: 20px;
 }
+
+.gridSizeSelector5x5 {}
+
+.gridSizeSelector7x7 {}
+
+@media screen and (max-width: 1244px) {
+    .gridSizeSelector13x13 {
+        display:none;
+    }
+
+    .gridSizeSelector15x15 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .gridSizeSelector10x10 {
+        display: none;
+    }
+}
+
 
 .badGridWarning {
     margin-top: 5px;

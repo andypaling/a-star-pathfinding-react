@@ -12,23 +12,17 @@ class AStar extends Component {
         this.state = {
             // Zeros represent free space in the grid, 1's represent walls
             grid: [
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0,],
+                [0, 0, 0, 0, 0, 0, 0,],
+                [0, 0, 0, 0, 0, 0, 0,],
+                [0, 0, 0, 0, 0, 0, 0,],
+                [0, 0, 0, 0, 0, 0, 0,],
+                [0, 0, 0, 0, 0, 0, 0,],
+                [0, 0, 0, 0, 0, 0, 0,],
             ],
             start: [0,0],
-            end: [12, 12],
-            size: 13,
+            end: [6, 6],
+            size: 7,
             gridWarningActive: false,
             oppositeTravelAllowed: false,
         };
@@ -109,13 +103,13 @@ class AStar extends Component {
     }
 
     resetGridToDefault() {
-        const newGrid = this.getNewGrid(13) // 13 is the size of the default grid
+        const newGrid = this.getNewGrid(7) // 13 is the size of the default grid
 
         this.setState({
             grid: newGrid,
             start: [0, 0],
-            end: [12, 12],
-            size: 13
+            end: [6, 6],
+            size: 7
         });
     }
 
