@@ -1,4 +1,5 @@
 for updating production reclone to server:
 - run ```npm run build```
-- cp -r the contents of the build dir to the var/www/http directory
+- rm -rf current contents of the /var/www/html directory
+- cp -r the contents of the build dir to the /var/www/html directory
 - reload apache
