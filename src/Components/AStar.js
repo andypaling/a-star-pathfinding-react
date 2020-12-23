@@ -103,13 +103,14 @@ class AStar extends Component {
     }
 
     resetGridToDefault() {
-        const newGrid = this.getNewGrid(7) // 13 is the size of the default grid
+        const currentGridSize = this.state.grid.length;
+        const newGrid = this.getNewGrid(currentGridSize);
 
         this.setState({
             grid: newGrid,
             start: [0, 0],
-            end: [6, 6],
-            size: 7
+            end: [currentGridSize-1, currentGridSize-1],
+            size: currentGridSize
         });
     }
 
