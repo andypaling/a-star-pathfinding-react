@@ -11,6 +11,10 @@ body {
     text-align: center;
 }
 
+.a-star-container {
+    margin: 10px;
+}
+
 .grid {
     display: flex;
     justify-content: center;
@@ -38,7 +42,7 @@ body {
 .controllerContainer {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .controllerContainerItem {
@@ -74,8 +78,11 @@ body {
 }
 
 .gridSizeSelector {
-    font-size: 24px;
+    font-size: 22px;
 }
+
+
+
 
 .sizeSelectorItem {
     margin-top: 6px;
@@ -84,10 +91,6 @@ body {
     padding: 10px;
     font-size: 20px;
 }
-
-.gridSizeSelector5x5 {}
-
-.gridSizeSelector7x7 {}
 
 @media screen and (max-width: 1244px) {
     .gridSizeSelector13x13 {
@@ -105,7 +108,6 @@ body {
     }
 }
 
-
 .badGridWarning {
     margin-top: 5px;
     margin-bottom: -10px;
@@ -113,4 +115,28 @@ body {
     font-style: italic;
     color: red;
     font-size: 22px;
+}
+
+.visualiser-demo-gif {
+    height: 275px;
+}
+
+.visualiser-demo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+}
+
+@media screen and (max-width: 767px) {
+    .gridSizeSelector {
+        font-size: 16px;
+    }
+
+    .sizeSelectorItem {
+        font-size: 16px;
+    }
+
+    .controllerContainerItem {
+        font-size: 16px;
+    }
 }

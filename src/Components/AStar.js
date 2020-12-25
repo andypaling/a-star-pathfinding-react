@@ -153,7 +153,7 @@ class AStar extends Component {
 
     render() {
         return (
-            <Fragment>
+            <div className="a-star-container">
                 <div className="grid">
                     <Grid
                         grid={this.state.grid}
@@ -175,7 +175,7 @@ class AStar extends Component {
                     resetGridToDefault={() => this.resetGridToDefault()}
                     findPathAndUpdateState={() => this.findPathAndUpdateState()}
                 />
-            </Fragment>
+            </div>
         )
     }
 }

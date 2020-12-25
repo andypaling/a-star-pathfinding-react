@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class GridController extends Component {
+    /*
+    This component is within the main visualiser AND in the tutorial modal,
+    changed made here will apply to both a tutorial modal and visualiser.
+     */
     render() {
         const{ selectedItem } = this.props;
 
