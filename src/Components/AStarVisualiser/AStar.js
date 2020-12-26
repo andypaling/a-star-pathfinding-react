@@ -1,9 +1,9 @@
-import React, {Component, Fragment} from 'react';
+import React, { Component } from 'react';
 import Grid from './Grid';
 import BottomController from './BottomController';
 import BadGridWarning from "./BadGridWarning";
-import OppositeTravelSwitch from './OppositeTravelSwitch';
-import aStar from "../AStarAlgorithm/aStar";
+import OppositeTravelSwitch from './OppositeTravelController/OppositeTravelSwitch';
+import aStar from "../../AStarAlgorithm/aStar";
 
 
 class AStar extends Component {

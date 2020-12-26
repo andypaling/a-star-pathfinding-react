@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Square from './Square';
 import GridController from './GridController';
-import GridSizeSelector from "./GridSizeSelector";
+import GridSizeSelector from "./GridSizeSelector/GridSizeSelector";
 
 
 class Grid extends Component {
