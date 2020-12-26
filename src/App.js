@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import AStar from "./Components/AStar";
+import AStar from "./Components/AStarVisualiser/AStar";
 import Header from './Components/Layout/Header';
-import TutorialModal from './Components/Layout/Modals/TutorialModal/TutorialModal';
+import TutorialModal from './Components/TutorialModal/TutorialModal';
 
 class App extends Component {
     constructor(props) {

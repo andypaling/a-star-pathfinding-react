@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
+import OppositeTravelWhatsThisModalTrigger from "./OppositeTravelWhatsThisModalTrigger";
 
 
 class OppositeTravelSwitch extends Component {
@@ -14,6 +15,7 @@ class OppositeTravelSwitch extends Component {
                     width={300}
                     onChange={(checked) => {this.props.changeAllowedTravelValue(checked)}}
                 />
+               <OppositeTravelWhatsThisModalTrigger />
             </div>
         )
     }

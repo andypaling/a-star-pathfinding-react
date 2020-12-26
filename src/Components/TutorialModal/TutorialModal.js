@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GridController from "../../../GridController";
+import GridController from "../AStarVisualiser/GridController";
 import VisualiserDemo from "./VisualiserDemo";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';

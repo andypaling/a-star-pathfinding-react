@@ -31,6 +31,7 @@ body {
     padding: 0;
     text-align: center;
     width: 32px;
+    cursor: pointer;
 }
 
 .grid-row:after {
@@ -54,6 +55,7 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .controllerContainerItemColorSquare {
@@ -81,15 +83,13 @@ body {
     font-size: 22px;
 }
 
-
-
-
 .sizeSelectorItem {
     margin-top: 6px;
     background-color: #c7c7c7;
     border-radius: 5px;
     padding: 10px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1244px) {
@@ -124,7 +124,29 @@ body {
 .visualiser-demo-container {
     display: flex;
     justify-content: center;
-    margin-top: -20px;
+    margin-top: -15px;
+}
+
+.opposite-travel-whats-this-cont {
+    margin-top: 2px;
+    font-size: 15px;
+    color: -webkit-link;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.opposite-travel-whats-this-cont:hover {
+    color: #2020c6;
+    text-decoration: underline;
+}
+
+.opposite-travel-modal-demo-cont {
+    display: flex;
+    justify-content: center;
+}
+
+.opposite-travel-modal-demo-gif {
+    height: 275px;
 }
 
 @media screen and (max-width: 767px) {
