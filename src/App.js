@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AStar from "./Components/AStarVisualiser/AStar";
+import Visualiser from "./Components/AStarVisualiser/Visualiser";
 import Header from './Components/Layout/Header';
 import TutorialModal from './Components/TutorialModal/TutorialModal';
 
@@ -29,7 +29,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Header/>
-                <AStar/>
+                <Visualiser/>
                 <TutorialModal
                     show={this.state.viewTutorial}
                     onHide={() => this.setState({ viewTutorial: false })}

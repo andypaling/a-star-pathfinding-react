@@ -1,12 +1,13 @@
 import React from 'react';
-import Jumbotron from 'react-bootstrap/Jumbotron'
+import AppBar from '@material-ui/core/AppBar';
 
 
 function Header(props) {
    return (
-       <Jumbotron>
-          <h2>A* Pathfinding</h2>
-       </Jumbotron>
+       <AppBar position="static" color="secondary">
+           <h2 className="mt-4">A* Search Algorithm</h2>
+           <h5 className="mb-4">A graph traversal and pathfinding algorithm</h5>
+       </AppBar>
    )
 }
 

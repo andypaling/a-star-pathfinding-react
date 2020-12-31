@@ -56,6 +56,12 @@ body {
     align-items: center;
     font-size: 20px;
     cursor: pointer;
+    transition: background-color 0.2s;
+    -webkit-transition: background-color 0.2s;
+}
+
+.controllerContainerItem:hover {
+    background-color: #adadad;
 }
 
 .controllerContainerItemColorSquare {
@@ -72,8 +78,8 @@ body {
 }
 
 .gridSizeSelector {
+    margin-bottom: 15px;
     margin-left: 1px;
-    margin-top: 48px;
     display: flex;
     flex-direction: column;
     padding: 0 10px 0 10px;
@@ -85,24 +91,25 @@ body {
 
 .sizeSelectorItem {
     margin-top: 6px;
-    background-color: #c7c7c7;
     border-radius: 5px;
     padding: 10px;
     font-size: 20px;
-    cursor: pointer;
+    width: 100%;
 }
 
 @media screen and (max-width: 1244px) {
-    .gridSizeSelector13x13 {
-        display:none;
-    }
-
     .gridSizeSelector15x15 {
         display: none;
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1000px) {
+    .gridSizeSelector13x13 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
     .gridSizeSelector10x10 {
         display: none;
     }
@@ -150,15 +157,20 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-    .gridSizeSelector {
-        font-size: 16px;
-    }
-
-    .sizeSelectorItem {
-        font-size: 16px;
-    }
-
     .controllerContainerItem {
-        font-size: 16px;
+        font-size: 16px !important;
     }
+}
+
+.MuiAppBar-colorSecondary {
+    color: #fff;
+    background-color: #858c93 !important;
+}
+
+.a-star-container {
+    margin-top: 30px;
+}
+
+.grid-row {
+    justify-content: center;
 }

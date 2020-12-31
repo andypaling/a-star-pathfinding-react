@@ -2,7 +2,9 @@ import React, { Component, Fragment } from 'react';
 import Square from './Square';
 import GridController from './GridController';
 import GridSizeSelector from "./GridSizeSelector/GridSizeSelector";
-
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 class Grid extends Component {
     constructor(props) {
@@ -50,32 +52,39 @@ class Grid extends Component {
 
         return (
             <Fragment>
-                <div>
-                    <GridController
-                        selectedItem={this.state.selectedItem}
-                        changeSelectedItemValue={(newValue) => this.setNewItemValue(newValue)}
-                    />
-                    {grid.map((row, row_index) => (
-                        <div className="grid-row">
-                            {row.map((square, col_index) => (
-                                <Square
-                                    position={[row_index, col_index]}
-                                    wall={square === 1}
-                                    start={JSON.stringify(start) === JSON.stringify([row_index, col_index])}
-                                    end={JSON.stringify(end) === JSON.stringify([row_index, col_index])}
-                                    path={grid[row_index][col_index] === 9}
-                                    squareOnClick={(position) => this.squareOnClick(position)}
-                                />
+                <Container>
+                    <Row className="grid-row">
+                        <GridController
+                            selectedItem={this.state.selectedItem}
+                            changeSelectedItemValue={(newValue) => this.setNewItemValue(newValue)}
+                        />
+                    </Row>
+                    <Row className="grid-row">
+                        <GridSizeSelector
+                            selectedSize={size}
+                            changeGridSize={changeGridSize}
+                        />
+                        <div style={{display: "inline-table"}}>
+                            {grid.map((row, row_index) => (
+                                <div className="grid-row">
+                                    {row.map((square, col_index) => (
+                                        <Square
+                                            position={[row_index, col_index]}
+                                            wall={square === 1}
+                                            start={JSON.stringify(start) === JSON.stringify([row_index, col_index])}
+                                            end={JSON.stringify(end) === JSON.stringify([row_index, col_index])}
+                                            path={grid[row_index][col_index] === 9}
+                                            squareOnClick={(position) => this.squareOnClick(position)}
+                                        />
+                                    ))}
+                                </div>
                             ))}
                         </div>
-                    ))}
-                </div>
-                <GridSizeSelector
-                    selectedSize={size}
-                    changeGridSize={changeGridSize}
-                />
+
+                    </Row>
+                </Container>
             </Fragment>
-    )
+        )
     }
 }
 
