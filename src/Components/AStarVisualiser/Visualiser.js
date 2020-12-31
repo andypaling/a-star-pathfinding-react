@@ -6,7 +6,7 @@ import OppositeTravelSwitch from './OppositeTravelController/OppositeTravelSwitc
 import aStar from "../../AStarAlgorithm/aStar";
 
 
-class AStar extends Component {
+class Visualiser extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -181,6 +181,6 @@ class AStar extends Component {
 }
 
 
-export default AStar;
+export default Visualiser;
 
 

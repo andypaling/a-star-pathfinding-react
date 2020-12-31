@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Button} from "react-bootstrap";
 
 
 class GridSizeSelectorItem extends Component {
@@ -10,10 +11,10 @@ class GridSizeSelectorItem extends Component {
         const { value, selectedSize } = this.props;
 
         return (
-            <div className="sizeSelectorItem" style={{backgroundColor: selectedSize === value ? '#848484' : ''}}
-                 onClick={() => this.onClick()}>
+            <Button variant="outline-secondary" className="sizeSelectorItem" onClick={() => this.onClick()} active={selectedSize === value}>
                 {value} x {value}
-            </div>
+            </Button>
+
         )
     }
 }
