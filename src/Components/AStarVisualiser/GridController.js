@@ -23,7 +23,7 @@ class GridController extends Component {
                     style={{backgroundColor: selectedItem === 'start' ? '#848484' : ''}}
                     onClick={() => this.props.changeSelectedItemValue('start')}
                 >
-                    <span className="controllerContainerItemColorSquare" style={{backgroundColor: 'green'}} />
+                    <span className="controllerContainerItemColorSquare" style={{backgroundColor: '#28a745'}} />
                     Start
                 </div>
                 <div
@@ -31,7 +31,7 @@ class GridController extends Component {
                     style={{backgroundColor: selectedItem === 'end' ? '#848484' : ''}}
                     onClick={() => this.props.changeSelectedItemValue('end')}
                 >
-                    <span className="controllerContainerItemColorSquare" style={{backgroundColor: 'red'}} />
+                    <span className="controllerContainerItemColorSquare" style={{backgroundColor: '#dc3545'}} />
                     Finish
                 </div>
             </div>

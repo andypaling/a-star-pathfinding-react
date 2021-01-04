@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import replay from '../../Icons/replay.svg';
+import play_arrow from '../../Icons/play_arrow.svg';
 
 class BottomController extends Component {
     resetButtonOnClick() {
@@ -13,21 +18,25 @@ class BottomController extends Component {
 
     render() {
         return (
-            <div className="bottomController">
-                <Button
-                    variant="outline-secondary"
-                    onClick={() => this.resetButtonOnClick()}
-                    style={{marginRight: 10}}>
-                    Reset Grid To Default
-                </Button>
-
-                <Button
-                    variant="outline-secondary"
-                    style={{marginRight: 10}}
-                    onClick={() => this.findPathButtonOnClick()}>
-                    Find Path
-                </Button>
-            </div>
+            <Row style={{justifyContent: 'center'}}>
+                    <div className="bottomController">
+                        <Button
+                            variant="primary"
+                            onClick={() => this.resetButtonOnClick()}
+                            className="bottom-controller-top-btn"
+                        >
+                            <img style={{height: 25}} src={replay} alt=""/> Reset Grid To Default
+                        </Button>
+                        <Button
+                            variant="success"
+                            onClick={() => this.findPathButtonOnClick()}
+                            className="bottom-controller-bottom-btn"
+                        >
+                            <img style={{height: 25}} src={play_arrow} alt=""/>
+                            Find Path
+                        </Button>
+                </div>
+            </Row>
         )
     }
 }
