@@ -6,9 +6,9 @@ class Square extends Component {
         if (this.props.wall) {
             return '#5f5f5f';
         } else if (this.props.start) {
-            return 'green';
+            return '#28a745';
         } else if (this.props.end) {
-            return 'red';
+            return '#dc3545';
         } else if (this.props.path) {
             return 'yellow';
         } else {
