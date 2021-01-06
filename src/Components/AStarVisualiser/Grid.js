@@ -80,7 +80,6 @@ class Grid extends Component {
                                 </div>
                             ))}
                         </div>
-
                     </Row>
                 </Container>
             </Fragment>

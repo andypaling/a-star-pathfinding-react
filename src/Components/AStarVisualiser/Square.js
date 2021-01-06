@@ -17,8 +17,16 @@ class Square extends Component {
     }
 
 
-    onClick() {
+    onClick(e) {
+        e.stopPropagation();
         this.props.squareOnClick(this.props.position)
+    }
+
+    onMouseEnter(e) {
+        e.stopPropagation();
+        if (e.buttons === 1) {
+            this.props.squareOnClick(this.props.position);
+        }
     }
 
 
@@ -29,7 +37,8 @@ class Square extends Component {
             <div
                 className="square"
                 style={{backgroundColor: color}}
-                onClick={() => this.onClick()}
+                onMouseEnter={(e) => {this.onMouseEnter(e)}}
+                onClick={(e) => this.onClick(e)}
             />
         )
     }

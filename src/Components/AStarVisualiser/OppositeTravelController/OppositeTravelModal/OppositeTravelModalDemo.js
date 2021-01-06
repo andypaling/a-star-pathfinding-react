@@ -1,5 +1,5 @@
 import React from 'react';
-import oppositeTravelWallGIF from './opposite travel demo gif.gif';
+import oppositeTravelWallGIF from '../../../../GIFs/opposite travel demo gif.gif';
 
 
 function OppositeTravelModalDemo(props) {

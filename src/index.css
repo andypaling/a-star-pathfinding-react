@@ -32,6 +32,7 @@ body {
     text-align: center;
     width: 32px;
     cursor: pointer;
+    transition: all .2s;
 }
 
 .grid-row:after {
@@ -72,7 +73,7 @@ body {
 }
 
 .bottomController {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .bottom-controller-top-btn {
@@ -192,3 +193,14 @@ body {
 .grid-row {
     justify-content: center;
 }
+
+.bad-grid-warning-alert-cont {
+    width: fit-content;
+    margin: 3px auto;
+    text-align: left;
+}
+
+.MuiAlert-root {
+    transition: all .5s !important;
+}
+
