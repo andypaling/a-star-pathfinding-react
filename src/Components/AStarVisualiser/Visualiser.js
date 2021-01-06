@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Grid from './Grid';
 import BottomController from './BottomController';
-import BadGridWarning from "./BadGridWarning";
+import PathFindStatusMessage from "./PathFindStatusMessage";
 import OppositeTravelSwitch from './OppositeTravelController/OppositeTravelSwitch';
 import aStar from "../../AStarAlgorithm/aStar";
 
@@ -23,7 +23,8 @@ class Visualiser extends Component {
             start: [0,0],
             end: [6, 6],
             size: 7,
-            gridWarningActive: false,
+            pathFindStatusMessageActive: false, // Used to determine if PathFindStatusMessage will show a alert
+            pathFindSuccessful: undefined, // Used to decide if PathFindStatusMessage will be a success or error message
             oppositeTravelAllowed: false,
         };
     };
@@ -36,13 +37,16 @@ class Visualiser extends Component {
          */
         const { grid, start, end } = this.state;
         const path = aStar(grid, start, end, this.state.oppositeTravelAllowed);
+        this.setState({ pathFindStatusMessageActive: true });
 
         if (this.pathIsValid(path)) {
             this.removeALlPathElements();
             this.fillStateWithPath(path);
-            this.setState({ gridWarningActive: false })
+            this.setState({ pathFindSuccessful: true });
         } else {
-            this.setState({ gridWarningActive: true })
+            // In this case, the path cannot be found for the given grid, this
+            // will be because there is no possible path with the walls given
+            this.setState({ pathFindSuccessful: false })
         }
     }
 
@@ -170,7 +174,10 @@ class Visualiser extends Component {
                     changeAllowedTravelValue={(newValue) => this.changeAllowedTravelValue(newValue)}
                     checked={this.state.oppositeTravelAllowed}
                 />
-                <BadGridWarning active={this.state.gridWarningActive} />
+                <PathFindStatusMessage
+                    active={this.state.pathFindStatusMessageActive}
+                    isSuccessMessage={this.state.pathFindSuccessful}
+                />
                 <BottomController
                     resetGridToDefault={() => this.resetGridToDefault()}
                     findPathAndUpdateState={() => this.findPathAndUpdateState()}

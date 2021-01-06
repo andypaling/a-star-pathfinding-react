@@ -110,7 +110,7 @@ function aStar(maze, start, end, oppositeTravelAllowed) {
             }
         }
     }
-    console.log('error');
+    return undefined;
 }
 
 
