@@ -3,6 +3,16 @@
     padding: 0;
 }
 
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.row {
+    margin: 0 !important;
+}
+
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
 }
@@ -76,13 +86,9 @@ body {
     margin-top: 10px;
 }
 
-.bottom-controller-top-btn {
-    margin: 0 10px 0 10px;
-    padding-bottom: 5px;
-}
 
-.bottom-controller-bottom-btn {
-    margin-right: 10px;
+.bottom-controller-btn {
+    width: 209px;
 }
 
 @media screen and (max-width: 345px) {
@@ -156,7 +162,7 @@ body {
 .opposite-travel-whats-this-cont {
     margin-top: 2px;
     font-size: 15px;
-    color: -webkit-link;
+    color: ;
     cursor: pointer;
     font-weight: bold;
 }
@@ -194,13 +200,9 @@ body {
     justify-content: center;
 }
 
-.bad-grid-warning-alert-cont {
-    width: fit-content;
-    margin: 3px auto;
-    text-align: left;
-}
 
 .MuiAlert-root {
     transition: all .5s !important;
 }
+
 
