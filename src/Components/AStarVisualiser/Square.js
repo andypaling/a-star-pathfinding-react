@@ -18,11 +18,13 @@ class Square extends Component {
 
 
     onClick(e) {
+        e.preventDefault();
         e.stopPropagation();
         this.props.squareOnClick(this.props.position)
     }
 
     onMouseEnter(e) {
+        e.preventDefault();
         e.stopPropagation();
         if (e.buttons === 1) {
             this.props.squareOnClick(this.props.position);
