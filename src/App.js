@@ -25,11 +25,17 @@ class App extends Component {
         }
     }
 
+    changeViewTutorial(newValue) {
+        this.setState({ viewTutorial: newValue })
+    }
+
     render() {
         return (
             <div className="App">
                 <Header/>
-                <Visualiser/>
+                <Visualiser
+                    setViewTutorial={(newValue) => this.changeViewTutorial(newValue)}
+                />
                 <TutorialModal
                     show={this.state.viewTutorial}
                     onHide={() => this.setState({ viewTutorial: false })}

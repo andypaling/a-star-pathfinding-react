@@ -155,6 +155,10 @@ class Visualiser extends Component {
         this.setState({ oppositeTravelAllowed: newValue })
     }
 
+    changePathFindStatusMessageActive(newValue) {
+        this.setState({ pathFindStatusMessageActive: newValue });
+    }
+
     render() {
         return (
             <div className="a-star-container">
@@ -176,9 +180,11 @@ class Visualiser extends Component {
                 />
                 <PathFindStatusMessage
                     active={this.state.pathFindStatusMessageActive}
+                    setActive={(newValue) => this.changePathFindStatusMessageActive(newValue)}
                     isSuccessMessage={this.state.pathFindSuccessful}
                 />
                 <BottomController
+                    setViewTutorial={(newValue) => this.props.setViewTutorial(newValue)}
                     resetGridToDefault={() => this.resetGridToDefault()}
                     findPathAndUpdateState={() => this.findPathAndUpdateState()}
                 />
