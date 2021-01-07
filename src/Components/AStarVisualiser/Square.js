@@ -38,7 +38,7 @@ class Square extends Component {
                 className="square"
                 style={{backgroundColor: color}}
                 onMouseEnter={(e) => {this.onMouseEnter(e)}}
-                onClick={(e) => this.onClick(e)}
+                onMouseDown={(e) => this.onClick(e)}
             />
         )
     }
