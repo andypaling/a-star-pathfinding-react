@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class GridController extends Component {
+class GridTileSelector extends Component {
     /*
     This component is within the main visualiser AND in the tutorial modal,
     changed made here will apply to both a tutorial modal and visualiser.
@@ -19,7 +19,7 @@ class GridController extends Component {
                     Wall
                 </div>
                 <div
-                    className="controllerContainerItem"
+                    className="controllerContainerItem middleControllerContainerItem"
                     style={{backgroundColor: selectedItem === 'start' ? '#848484' : ''}}
                     onClick={() => this.props.changeSelectedItemValue('start')}
                 >
@@ -40,4 +40,4 @@ class GridController extends Component {
 }
 
 
-export default GridController;
+export default GridTileSelector;

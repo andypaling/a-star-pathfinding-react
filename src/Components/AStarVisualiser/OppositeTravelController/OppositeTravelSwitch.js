@@ -12,7 +12,7 @@ class OppositeTravelSwitch extends Component {
                     onlabel={"Adjacent Travel"}
                     offlabel={"No Adjacent Travel (Default)"}
                     onstyle={"secondary"}
-                    width={300}
+                    width={280}
                     onChange={(checked) => {this.props.changeAllowedTravelValue(checked)}}
                 />
                <OppositeTravelWhatsThisModalTrigger />

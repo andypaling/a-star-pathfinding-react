@@ -3,18 +3,23 @@
     padding: 0;
 }
 
-html, body {
+html {
     padding: 0;
     margin: 0;
     width: 100%;
-}
-
-.row {
-    margin: 0 !important;
+    height: 100%;
 }
 
 body {
+    background-color: #fff7f7 !important;
     font: 14px "Century Gothic", Futura, sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+hr {
+    margin: 15px 0 15px 0 !important;
+    border-top: 1px solid #c6c6c6 !important;
 }
 
 .App {
@@ -43,7 +48,7 @@ body {
     width: 32px;
     cursor: pointer;
     transition: all .2s;
-    -moz-user-select: -mox-none;
+    -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -63,7 +68,6 @@ body {
 }
 
 .controllerContainerItem {
-    margin-right: 7px;
     background-color: #c7c7c7;
     border-radius: 5px;
     padding: 7px;
@@ -74,6 +78,10 @@ body {
     cursor: pointer;
     transition: background-color 0.2s;
     -webkit-transition: background-color 0.2s;
+}
+
+.middleControllerContainerItem {
+    margin: 0 7px 0 7px;
 }
 
 .controllerContainerItem:hover {
@@ -205,9 +213,12 @@ body {
     justify-content: center;
 }
 
-
-.MuiAlert-root {
-    transition: all .5s !important;
+.card-content {
+    padding: 15px 15px 0 15px;
+    text-align: left;
+    font-size: 14px;
 }
 
-
+.about-the-alg-col {
+    margin-bottom: 10px;
+}

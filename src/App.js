@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Visualiser from "./Components/AStarVisualiser/Visualiser";
 import Header from './Components/Layout/Header';
-import TutorialModal from './Components/TutorialModal/TutorialModal';
+import TutorialAndWelcomeModal from './TutorialAndWelcomeModal/TutorialAndWelcomeModal';
+import Container from 'react-bootstrap/Container';
+import AlgorithmInfo from "./Components/AlgorithmInfo/AlgorithmInfo";
 
 class App extends Component {
     constructor(props) {
@@ -33,13 +35,16 @@ class App extends Component {
         return (
             <div className="App">
                 <Header/>
-                <Visualiser
-                    setViewTutorial={(newValue) => this.changeViewTutorial(newValue)}
-                />
-                <TutorialModal
-                    show={this.state.viewTutorial}
-                    onHide={() => this.setState({ viewTutorial: false })}
-                />
+                <Container>
+                    <Visualiser
+                        setViewTutorial={(newValue) => this.changeViewTutorial(newValue)}
+                    />
+                    <TutorialAndWelcomeModal
+                        show={this.state.viewTutorial}
+                        onHide={() => this.setState({ viewTutorial: false })}
+                    />
+                    <AlgorithmInfo />
+                </Container>
             </div>
         );
     }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import GridController from "../AStarVisualiser/GridController";
+import GridTileSelector from "../Components/AStarVisualiser/GridTileSelector/GridTileSelector";
 import VisualiserDemo from "./VisualiserDemo";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
 
-class TutorialModal extends Component {
+class TutorialAndWelcomeModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -43,7 +43,7 @@ class TutorialModal extends Component {
                         Placing items on the grid: Firstly select the tile type you wish to use from
                         the selector that will look and behave like this:
                     </p>
-                    <GridController
+                    <GridTileSelector
                         selectedItem={this.state.selectedItem}
                         changeSelectedItemValue={(newValue) => this.setSelectedItemValue(newValue)}
                     />
@@ -71,6 +71,6 @@ class TutorialModal extends Component {
 }
 
 
-export default TutorialModal;
+export default TutorialAndWelcomeModal;
 
 

@@ -54,13 +54,11 @@ function aStar(maze, start, end, oppositeTravelAllowed) {
 
             return path.reverse();
         }
-        // Generate children
         let children = [];
-
         let adjacentPositions;
 
         if (oppositeTravelAllowed) {
-            adjacentPositions = [[0, -1], [0, 1], [-1, 0], [1, 0], [-1, -1], [-1, 1], [1, -1], [1, 1]];
+            adjacentPositions = [[0, -1], [0, 1], [1, 0], [-1, 0], [1, 1], [1, -1], [-1, 1], [-1, -1]];
         } else {
             adjacentPositions = [[0, -1], [0, 1], [1, 0], [-1, 0]];
         }
@@ -99,9 +97,36 @@ function aStar(maze, start, end, oppositeTravelAllowed) {
                 continue;
             }
 
+            child.g = currentNode.g + 1;
 
-            child.g = Math.abs(child.position[0] - startNode.position[0]) + Math.abs(child.position[1] - startNode.position[1]);
+            // Manhattan distance
             child.h = Math.abs(child.position[0] - endNode.position[0]) + Math.abs(child.position[1] - endNode.position[1]);
+
+
+            /*
+            // Euclidean distance
+            const dx = Math.abs(child.position[1] - endNode.position[1]);
+            const dy = Math.abs(child.position[0] - endNode.position[0]);
+            child.h = Math.sqrt(dx * dx + dy * dy);
+             */
+
+            /*
+            // Octile distance
+            const D1 = 1;
+            const D2 = Math.sqrt(2);
+            const d1 = Math.abs(child.position[1] - endNode.position[1]);
+            const d2 = Math.abs(child.position[0] - endNode.position[0]);
+            child.h = (D1 * (d1 + d2)) + ((D2 - (2 * D1)) * Math.min(d1, d2));
+             */
+
+            /*
+            // Chebyshev distance
+            const D1 = D2 = 1;
+            const d1 = Math.abs(child.position[1] - endNode.position[1]);
+            const d2 = Math.abs(child.position[0] - endNode.position[0]);
+            child.h = (D1 * (d1 + d2)) + ((D2 - (2 * D1)) * Math.min(d1, d2));
+             */
+
             child.f = child.g + child.h;
 
             // Check is child is already in the open list
