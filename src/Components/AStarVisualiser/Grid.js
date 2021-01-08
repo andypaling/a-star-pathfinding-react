@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Square from './Square';
-import GridController from './GridController';
+import GridTileSelector from './GridTileSelector/GridTileSelector';
 import GridSizeSelector from "./GridSizeSelector/GridSizeSelector";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -54,12 +54,12 @@ class Grid extends Component {
             <Fragment>
                 <Container>
                     <Row className="grid-row">
-                        <GridController
+                        <GridTileSelector
                             selectedItem={this.state.selectedItem}
                             changeSelectedItemValue={(newValue) => this.setNewItemValue(newValue)}
                         />
                     </Row>
-                    <Row className="grid-row">
+                    <Row className="grid-row" >
                         <GridSizeSelector
                             selectedSize={size}
                             changeGridSize={changeGridSize}
