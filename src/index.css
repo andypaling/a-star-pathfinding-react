@@ -22,6 +22,10 @@ hr {
     border-top: 1px solid #c6c6c6 !important;
 }
 
+label {
+    margin-bottom: 0 !important;
+}
+
 .App {
     text-align: center;
 }
@@ -173,9 +177,8 @@ hr {
 }
 
 .opposite-travel-whats-this-cont {
-    margin-top: 2px;
+    margin-bottom: 7px !important;
     font-size: 15px;
-    color: ;
     cursor: pointer;
     font-weight: bold;
 }
@@ -221,4 +224,12 @@ hr {
 
 .about-the-alg-col {
     margin-bottom: 10px;
+}
+
+.MuiFormControlLabel-root {
+    margin-bottom: -13px !important;
+}
+
+.MuiRadio-root {
+    color: #007bff !important;
 }

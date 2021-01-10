@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GridTileSelector from "../Components/AStarVisualiser/GridTileSelector/GridTileSelector";
+import GridTileSelector from "../AStarVisualiser/GridTileSelector/GridTileSelector";
 import VisualiserDemo from "./VisualiserDemo";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';

@@ -1,5 +1,5 @@
 import React from 'react';
-import visualiserDemo from '../GIFs/visualiserDemo.gif'
+import visualiserDemo from '../../GIFs/visualiserDemo.gif'
 
 
 function VisualiserDemo(props) {

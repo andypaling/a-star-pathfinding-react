@@ -9,7 +9,7 @@ class Node {
 }
 
 
-function aStar(maze, start, end, oppositeTravelAllowed) {
+function aStar(maze, start, end, oppositeTravelAllowed, heuristic) {
     // Check is end node is not a wall
     if (maze[end[0]][end[1]] === 1) return;
 
@@ -99,33 +99,42 @@ function aStar(maze, start, end, oppositeTravelAllowed) {
 
             child.g = currentNode.g + 1;
 
-            // Manhattan distance
-            child.h = Math.abs(child.position[0] - endNode.position[0]) + Math.abs(child.position[1] - endNode.position[1]);
+            switch (heuristic) {
+                default: {
+                    // Manhattan distance
+                    child.h = Math.abs(child.position[0] - endNode.position[0]) + Math.abs(child.position[1] - endNode.position[1]);
+                    break;
+                }
 
+                case 'euclidean': {
+                    // Euclidean distance
+                    const dx = Math.abs(child.position[1] - endNode.position[1]);
+                    const dy = Math.abs(child.position[0] - endNode.position[0]);
+                    child.h = Math.sqrt(dx * dx + dy * dy);
+                    break;
+                }
 
-            /*
-            // Euclidean distance
-            const dx = Math.abs(child.position[1] - endNode.position[1]);
-            const dy = Math.abs(child.position[0] - endNode.position[0]);
-            child.h = Math.sqrt(dx * dx + dy * dy);
-             */
+                case 'octile': {
+                    // Octile distance
+                    const D1 = 1;
+                    const D2 = Math.sqrt(2);
+                    const d1 = Math.abs(child.position[1] - endNode.position[1]);
+                    const d2 = Math.abs(child.position[0] - endNode.position[0]);
+                    child.h = (D1 * (d1 + d2)) + ((D2 - (2 * D1)) * Math.min(d1, d2));
+                    break;
+                }
 
-            /*
-            // Octile distance
-            const D1 = 1;
-            const D2 = Math.sqrt(2);
-            const d1 = Math.abs(child.position[1] - endNode.position[1]);
-            const d2 = Math.abs(child.position[0] - endNode.position[0]);
-            child.h = (D1 * (d1 + d2)) + ((D2 - (2 * D1)) * Math.min(d1, d2));
-             */
+                case 'chebyshev': {
+                    // Chebyshev distance
+                    const D1 = 1;
+                    const D2 = D1;
+                    const d1 = Math.abs(child.position[1] - endNode.position[1]);
+                    const d2 = Math.abs(child.position[0] - endNode.position[0]);
+                    child.h = (D1 * (d1 + d2)) + ((D2 - (2 * D1)) * Math.min(d1, d2));
+                    break;
+                }
 
-            /*
-            // Chebyshev distance
-            const D1 = D2 = 1;
-            const d1 = Math.abs(child.position[1] - endNode.position[1]);
-            const d2 = Math.abs(child.position[0] - endNode.position[0]);
-            child.h = (D1 * (d1 + d2)) + ((D2 - (2 * D1)) * Math.min(d1, d2));
-             */
+            }
 
             child.f = child.g + child.h;
 
