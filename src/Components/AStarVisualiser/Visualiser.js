@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Grid from './Grid';
 import BottomController from './BottomController';
 import PathFindStatusMessage from "./PathFindStatusMessage";
-import OppositeTravelSwitch from './OppositeTravelController/OppositeTravelSwitch';
+import OppositeTravelAccordion from './OppositeTravelAccordion/OppositeTravelAccordion';
+import ChangeHeuristicAccordion from "./ChangeHeuristicAccordion/ChangeHeuristicAccordion";
 import aStar from "../../AStarAlgorithm/aStar";
 
 
@@ -25,6 +28,7 @@ class Visualiser extends Component {
             size: 7,
             pathFindStatusMessageActive: false, // Used to determine if PathFindStatusMessage will show a alert
             pathFindSuccessful: undefined, // Used to decide if PathFindStatusMessage will be a success or error message
+            heuristic: 'manhattan',
             oppositeTravelAllowed: false,
         };
     };
@@ -36,12 +40,13 @@ class Visualiser extends Component {
         Then update the grid state so that 9's represent the stages of the path
          */
         const { grid, start, end } = this.state;
-        const path = aStar(grid, start, end, this.state.oppositeTravelAllowed);
+        const path = aStar(grid, start, end, this.state.oppositeTravelAllowed, this.state.heuristic);
+
         this.setState({ pathFindStatusMessageActive: true });
 
         if (this.pathIsValid(path)) {
-            this.removeALlPathElements();
-            this.fillStateWithPath(path);
+            this.removePathNodesInGrid();
+            this.fillGridWithPath(path);
             this.setState({ pathFindSuccessful: true });
         } else {
             // In this case, the path cannot be found for the given grid, this
@@ -54,7 +59,7 @@ class Visualiser extends Component {
         return path !== undefined;
     }
 
-    removeALlPathElements() {
+    removePathNodesInGrid() {
         let newGrid = this.state.grid;
 
         for (let i = 0; i < newGrid.length; i++) {
@@ -68,7 +73,7 @@ class Visualiser extends Component {
         return newGrid;
     }
 
-    fillStateWithPath(path) {
+    fillGridWithPath(path) {
         /*
         Set the state so that all index's in which the
         path travels are changed to the value of 9
@@ -87,7 +92,7 @@ class Visualiser extends Component {
         this.setState({ grid: newGrid })
     }
 
-    setGridValue(position, value) {
+    setValueOfGridElement(position, value) {
         let newGrid = this.state.grid;
         newGrid[position[0]][position[1]] = value;
 
@@ -108,7 +113,7 @@ class Visualiser extends Component {
 
     resetGridToDefault() {
         const currentGridSize = this.state.grid.length;
-        const newGrid = this.getNewGrid(currentGridSize);
+        const newGrid = this.getNewEmptyGrid(currentGridSize);
 
         this.setState({
             grid: newGrid,
@@ -125,7 +130,7 @@ class Visualiser extends Component {
         Param newSize is an int that refers to the new amount of cols and row we will have
         We still then reset the state with the new grid and the new end point.
          */
-        const newGrid = this.getNewGrid(newSize);
+        const newGrid = this.getNewEmptyGrid(newSize);
 
         this.setState({
             grid: newGrid,
@@ -135,7 +140,7 @@ class Visualiser extends Component {
         })
     }
 
-    getNewGrid(newSize) {
+    getNewEmptyGrid(newSize) {
         /*
         Returns a new, clean reset grid on newSize amount of cols and rows
          */
@@ -151,11 +156,15 @@ class Visualiser extends Component {
         return newGrid;
     }
 
-    changeAllowedTravelValue(newValue) {
+    setAllowedTravelValue(newValue) {
         this.setState({ oppositeTravelAllowed: newValue })
     }
 
-    changePathFindStatusMessageActive(newValue) {
+    setHeuristicValue(newValue) {
+        this.setState({ heuristic: newValue });
+    }
+
+    setPathFindStatusMessageActive(newValue) {
         this.setState({ pathFindStatusMessageActive: newValue });
     }
 
@@ -168,19 +177,29 @@ class Visualiser extends Component {
                         start={this.state.start}
                         end={this.state.end}
                         size={this.state.size}
-                        setGridValue={(position, value) => this.setGridValue(position, value)}
+                        setGridValue={(position, value) => this.setValueOfGridElement(position, value)}
                         setStart={(position) => this.setStart(position)}
                         setEnd={(position) => this.setEnd(position)}
                         changeGridSize={(newSize) => this.changeGridSize(newSize)}
                     />
                 </div>
-                <OppositeTravelSwitch
-                    changeAllowedTravelValue={(newValue) => this.changeAllowedTravelValue(newValue)}
-                    checked={this.state.oppositeTravelAllowed}
-                />
+                <Row>
+                    <Col md={6} style={{marginTop: 20}}>
+                        <OppositeTravelAccordion
+                            setOppositeTravelAllowed={(newValue) => this.setAllowedTravelValue(newValue)}
+                            oppositeTravelAllowed={this.state.oppositeTravelAllowed}
+                        />
+                    </Col>
+                    <Col md={6} style={{marginTop: 20}}>
+                        <ChangeHeuristicAccordion
+                            value={this.state.heuristic}
+                            setValue={(newValue) => this.setHeuristicValue(newValue)}
+                        />
+                    </Col>
+                </Row>
                 <PathFindStatusMessage
                     active={this.state.pathFindStatusMessageActive}
-                    setActive={(newValue) => this.changePathFindStatusMessageActive(newValue)}
+                    setActive={(newValue) => this.setPathFindStatusMessageActive(newValue)}
                     isSuccessMessage={this.state.pathFindSuccessful}
                 />
                 <BottomController

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Visualiser from "./Components/AStarVisualiser/Visualiser";
 import Header from './Components/Layout/Header';
-import TutorialAndWelcomeModal from './TutorialAndWelcomeModal/TutorialAndWelcomeModal';
+import TutorialAndWelcomeModal from './Components/TutorialAndWelcomeModal/TutorialAndWelcomeModal';
 import Container from 'react-bootstrap/Container';
 import AlgorithmInfo from "./Components/AlgorithmInfo/AlgorithmInfo";
 
