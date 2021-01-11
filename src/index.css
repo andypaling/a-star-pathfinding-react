@@ -26,6 +26,10 @@ label {
     margin-bottom: 0 !important;
 }
 
+li {
+    margin: 0 0 7px 0;
+}
+
 .App {
     text-align: center;
 }
@@ -232,4 +236,37 @@ label {
 
 .MuiRadio-root {
     color: #007bff !important;
+}
+
+.change-heuristic-accordion-text {
+    text-align: left;
+    padding: 8px 16px 0;
+
+}
+
+.about-the-alg-text {
+    text-align: left;
+    font-size: 18px;
+}
+
+@media only screen and (min-width: 992px) {
+    .about-the-alg-text {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .about-the-alg-text {
+        font-size: 20px;
+    }
+}
+
+.f-value-formula-cont {
+    text-align: center;
+    font-size: 26px;
+}
+
+.f-value-explanation {
+    width: 100%;
+    margin-top: 10px;
 }

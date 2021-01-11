@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import Visualiser from "./Components/AStarVisualiser/Visualiser";
 import Header from './Components/Layout/Header';
-import TutorialAndWelcomeModal from './Components/TutorialAndWelcomeModal/TutorialAndWelcomeModal';
 import Container from 'react-bootstrap/Container';
+import Visualiser from "./Components/AStarVisualiser/Visualiser";
+import TutorialAndWelcomeModal from './Components/TutorialAndWelcomeModal/TutorialAndWelcomeModal';
 import AlgorithmInfo from "./Components/AlgorithmInfo/AlgorithmInfo";
+import HowAStarWorks from "./Components/HowAStarWorks/HowAStarWorks";
+
 
 class App extends Component {
     constructor(props) {
@@ -44,6 +46,7 @@ class App extends Component {
                         onHide={() => this.setState({ viewTutorial: false })}
                     />
                     <AlgorithmInfo />
+                    <HowAStarWorks />
                 </Container>
             </div>
         );
