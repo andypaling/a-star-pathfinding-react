@@ -17,6 +17,9 @@ class ChangeHeuristicAccordion extends Component {
                 >
                     Change Heuristic
                 </AccordionSummary>
+                <div className="change-heuristic-accordion-text">
+                    The heuristic takes a key role in the behavior of the algorithm. It gives an estimate of the minimum cost from a given node to the goal node.
+                </div>
                 <AccordionDetails>
                     <HeuristicRadioGroup
                         value={this.props.value}
