@@ -16,9 +16,24 @@ class OppositeTravelRadioGroup extends Component {
     render() {
         return (
             <div style={{marginTop: -10}}>
-                <RadioGroup aria-label="opposite" name="opposite1" value={this.props.oppositeTravelAllowed} onChange={(e) => this.handleChange(e)}>
-                    <FormControlLabel value={false} control={<Radio />} label="Do Not Allow Diagonal" />
-                    <FormControlLabel value={true} control={<Radio />} label="Allow Diagonal" />
+                <RadioGroup
+                    aria-label="opposite"
+                    name="opposite1"
+                    value={this.props.oppositeTravelAllowed}
+                    onChange={(e) => this.handleChange(e)}
+                >
+                    <FormControlLabel
+                        className="radio-btn-long"
+                        value={false}
+                        control={<Radio />}
+                        label="Do Not Allow Diagonal"
+                    />
+                    <FormControlLabel
+                        className="radio-btn-long"
+                        value={true}
+                        control={<Radio />}
+                        label="Allow Diagonal"
+                    />
                 </RadioGroup>
             </div>
         )

@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import Radio from '@material-ui/core/Radio';
-import Checkbox from '@material-ui/core/Checkbox';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
