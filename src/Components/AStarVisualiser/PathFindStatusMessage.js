@@ -1,5 +1,5 @@
 import { React, Fragment, Component } from 'react';
-import { Alert, AlertTitle } from '@material-ui/lab/';
+import { Alert } from '@material-ui/lab/';
 import Snackbar from '@material-ui/core/Snackbar';
 
 class PathFindStatusMessage extends Component {
