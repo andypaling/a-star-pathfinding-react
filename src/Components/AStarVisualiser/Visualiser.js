@@ -195,6 +195,7 @@ class Visualiser extends Component {
                         <ChangeHeuristicAccordion
                             value={this.state.heuristic}
                             setValue={(newValue) => this.setHeuristicValue(newValue)}
+                            scrollToHeuristicInfo={() => this.props.scrollToHeuristicInfo()}
                         />
                     </Col>
                 </Row>

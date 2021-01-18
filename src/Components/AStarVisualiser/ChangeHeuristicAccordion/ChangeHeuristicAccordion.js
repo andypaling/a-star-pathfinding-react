@@ -4,6 +4,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import HeuristicRadioGroup from "./HeuristicRadioGroup";
+import MoreInfoScrollTrigger from "./MoreInfoScrollTrigger";
 
 
 class ChangeHeuristicAccordion extends Component {
@@ -26,6 +27,9 @@ class ChangeHeuristicAccordion extends Component {
                         setValue={(newValue) => this.props.setValue(newValue)}
                     />
                 </AccordionDetails>
+                <MoreInfoScrollTrigger
+                    scrollToHeuristicInfo={() => this.props.scrollToHeuristicInfo()}
+                />
             </Accordion>
         )
     }
