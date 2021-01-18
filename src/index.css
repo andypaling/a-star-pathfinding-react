@@ -148,6 +148,19 @@ li {
     width: 100%;
 }
 
+@media screen and (max-width: 1850px) {
+    .gridSizeSelector30x30 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .gridSizeSelector25x25 {
+        display: none;
+    }
+}
+
+
 @media screen and (max-width: 1244px) {
     .gridSizeSelector15x15 {
         display: none;

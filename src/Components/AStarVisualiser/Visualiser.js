@@ -123,7 +123,7 @@ class Visualiser extends Component {
         });
     }
 
-    changeGridSize(newSize) {
+     changeGridSize(newSize) {
         /*
         Changes the grid in state to a new size (more cols & rows)
         We then call the reset grid method so that the walls are removed and end placed correctly
@@ -169,6 +169,7 @@ class Visualiser extends Component {
     }
 
     render() {
+
         return (
             <div className="a-star-container">
                 <div className="grid">
