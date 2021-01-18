@@ -51,6 +51,7 @@ function aStar(maze, start, end, oppositeTravelAllowed, heuristic) {
                 path.push(current.position);
                 current = current.parent;
             }
+            console.log(path.length)
             return path.reverse();
         }
         let children = [];

@@ -44,6 +44,20 @@ class GridSizeSelector extends Component {
                         changeGridSize={changeGridSize}
                     />
                 </div>
+                <div className="gridSizeSelector25x25">
+                    <GridSizeSelectorItem
+                        value={25}
+                        selectedSize={selectedSize}
+                        changeGridSize={changeGridSize}
+                    />
+                </div>
+                <div className="gridSizeSelector30x30">
+                    <GridSizeSelectorItem
+                        value={30}
+                        selectedSize={selectedSize}
+                        changeGridSize={changeGridSize}
+                    />
+                </div>
             </div>
         )
     }

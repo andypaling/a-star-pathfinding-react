@@ -46,7 +46,34 @@ class Grid extends Component {
         }
     }
 
+    handleResize() {
+        /*
+        Is called by the window resize listener. Gets the current window width and
+        the current grid size. If the current window width is low enough that the
+        current grid size is no longer available to be selected on my grid size selector,
+        the grid size will be changed to the next lower value.
+         */
+
+        const currentGridSize = this.props.size;
+        const currentWindowWidth = window.innerWidth;
+
+        if (currentGridSize === 30 && currentWindowWidth < 1850) {
+            this.props.changeGridSize(25);
+        } else if (currentGridSize === 25 && currentWindowWidth < 1500) {
+            this.props.changeGridSize(15);
+        } else if (currentGridSize === 15 && currentWindowWidth < 1244) {
+            this.props.changeGridSize(13);
+        } else if (currentGridSize === 13 && currentWindowWidth < 1000) {
+            this.props.changeGridSize(10);
+        } else if (currentGridSize === 10 && currentWindowWidth < 550) {
+            this.props.changeGridSize(7);
+        }
+    }
+
+
     render() {
+        window.addEventListener('resize', () => this.handleResize());
+
         const { grid, start, end, size, changeGridSize } = this.props;
 
         return (

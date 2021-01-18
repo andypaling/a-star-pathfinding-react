@@ -11,7 +11,12 @@ class GridSizeSelectorItem extends Component {
         const { value, selectedSize } = this.props;
 
         return (
-            <Button variant="outline-secondary" className="sizeSelectorItem" onClick={() => this.onClick()} active={selectedSize === value}>
+            <Button
+                variant="outline-secondary"
+                className="sizeSelectorItem"
+                onClick={() => this.onClick()}
+                active={selectedSize === value}
+            >
                 {value} x {value}
             </Button>
 
