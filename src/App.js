@@ -5,6 +5,7 @@ import Visualiser from "./Components/AStarVisualiser/Visualiser";
 import TutorialAndWelcomeModal from './Components/TutorialAndWelcomeModal/TutorialAndWelcomeModal';
 import AlgorithmInfo from "./Components/AlgorithmInfo/AlgorithmInfo";
 import HowAStarWorks from "./Components/HowAStarWorks/HowAStarWorks";
+import HeuristicsInfo from "./Components/HeuristicsInfo/HeuristicsInfo";
 
 
 class App extends Component {
@@ -19,7 +20,7 @@ class App extends Component {
         let pageVisited = localStorage["pageVisited"];
 
         if (pageVisited) {
-            // DO not load tutorial popup
+            // D not load tutorial popup
             this.setState({ viewTutorial: false })
         } else {
             // This is the first time the user has visited the site
@@ -33,13 +34,20 @@ class App extends Component {
         this.setState({ viewTutorial: newValue })
     }
 
+    scrollToHeuristicInfo() {
+        document.getElementById('heuristicInfo').scrollIntoView({ block: 'start', behavior: 'smooth' });
+    }
+
+
     render() {
         return (
+
             <div className="App">
                 <Header/>
                 <Container>
                     <Visualiser
                         setViewTutorial={(newValue) => this.changeViewTutorial(newValue)}
+                        scrollToHeuristicInfo={() => this.scrollToHeuristicInfo()}
                     />
                     <TutorialAndWelcomeModal
                         show={this.state.viewTutorial}
@@ -47,6 +55,9 @@ class App extends Component {
                     />
                     <AlgorithmInfo />
                     <HowAStarWorks />
+                    <div id="heuristicInfo">
+                        <HeuristicsInfo />
+                    </div>
                 </Container>
             </div>
         );

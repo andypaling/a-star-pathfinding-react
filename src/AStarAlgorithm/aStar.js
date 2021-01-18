@@ -118,7 +118,7 @@ function aStar(maze, start, end, oppositeTravelAllowed, heuristic) {
                     // Chebyshev distance
                     const d1 = Math.abs(child.position[1] - endNode.position[1]);
                     const d2 = Math.abs(child.position[0] - endNode.position[0]);
-                    child.h = (d1 + d2) + (-1 * Math.min(d1, d2));
+                    child.h = Math.max(d1, d2);
                     break;
                 }
 

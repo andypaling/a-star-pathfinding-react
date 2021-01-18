@@ -32,6 +32,7 @@ li {
 
 .App {
     text-align: center;
+    padding-bottom: 50px;
 }
 
 .a-star-container {
@@ -260,6 +261,7 @@ li {
     text-align: left;
     padding: 8px 16px 0;
 
+
 }
 
 .info-text {
@@ -302,4 +304,22 @@ li {
 .radio-btn-long {
     .font-size: .99rem;
     text-align: left;
+}
+
+.heuristic-info-h4 {
+    text-align: left;
+    margin: 20px 0 20px;
+}
+
+.code {
+    margin-top: 16px !important;
+    margin-bottom: 16px!important;
+    width: auto;
+    background-color: #fff;
+    word-wrap: break-word;
+    padding: 8px 12px;
+    border-left: 4px solid #007bff;
+    text-align: left;
+    font-family: Consolas, "courier new", monospace;
+    font-size: 16px;
 }
