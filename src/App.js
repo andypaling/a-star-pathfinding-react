@@ -6,6 +6,7 @@ import TutorialAndWelcomeModal from './Components/TutorialAndWelcomeModal/Tutori
 import AlgorithmInfo from "./Components/AlgorithmInfo/AlgorithmInfo";
 import HowAStarWorks from "./Components/HowAStarWorks/HowAStarWorks";
 import HeuristicsInfo from "./Components/HeuristicsInfo/HeuristicsInfo";
+import { scroller } from 'react-scroll';
 
 
 class App extends Component {
@@ -35,13 +36,12 @@ class App extends Component {
     }
 
     scrollToHeuristicInfo() {
-        document.getElementById('heuristicInfo').scrollIntoView({ block: 'start', behavior: 'smooth' });
+        scroller.scrollTo('heuristicInfo', { smooth: true, duration: 1000 })
     }
 
 
     render() {
         return (
-
             <div className="App">
                 <Header/>
                 <Container>
