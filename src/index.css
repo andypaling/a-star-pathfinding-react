@@ -281,6 +281,16 @@ li {
     }
 }
 
+.accordion-text {
+    font-size: 17px;
+}
+
+@media only screen and (min-width: 992px) {
+    .accordion-text {
+        font-size: 18px;
+    }
+}
+
 .f-value-formula-cont {
     text-align: center;
     font-size: 26px;
@@ -295,7 +305,7 @@ li {
     text-align: left !important;
 }
 
-.alg-info-header {
+.big-header {
     font-weight: 700;
     text-align: left;
     padding: 25px 0 25px 0;
@@ -309,6 +319,7 @@ li {
 .heuristic-info-h4 {
     text-align: left;
     margin: 20px 0 20px;
+    font-weight: bold;
 }
 
 .code {
@@ -322,4 +333,69 @@ li {
     text-align: left;
     font-family: Consolas, "courier new", monospace;
     font-size: 16px;
+}
+
+.hr-links {
+    margin: 0 50px 0 50px;
+    border-top: 1px solid #7a7a7a;
+}
+
+@media only screen and (min-width: 1300px) {
+    .hr-links {
+        margin: 0 80px 0 80px;
+    }
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    padding: 9px 0 9px 0;
+}
+
+.appbar-btn {
+    border: none !important;
+    border-radius: 5px;
+    outline: none !important;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-color: transparent;
+    font-weight: 600;
+    color: #fff;
+}
+
+.appbar-btn:hover {
+    background-color: #939ba2;
+    color: #fff !important;
+    transition: background 0.3s;
+}
+
+.report-bug-col {
+    padding-left: 0 !important;
+    text-align: left;
+}
+
+.report-bug-text-field {
+    width: 100%;
+}
+
+.report-bug-submit-btn {
+    margin-top: 15px;
+    width: 150px;
+
+}
+
+.btn-outline-secondary {
+    font-size: 19px !important;
+    font-weight: 500 !important;
+}
+
+.report-bug-alert-title {
+    font-size: 17px !important;
+}
+
+.report-bug-error-list {
+    margin-bottom: -10px;
 }
