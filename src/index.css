@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #fff7f7 !important;
+    font: 14px "Century Gothic", Futura, sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+hr {
+    margin: 15px 0 15px 0 !important;
+    border-top: 1px solid #c6c6c6 !important;
+}
+
+label {
+    margin-bottom: 0 !important;
+}
+
+li {
+    margin: 0 0 7px 0;
+}
+
+.App {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.a-star-container {
+    margin: 10px;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+}
+
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.square {
+    border: 1px solid #999;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 32px;
+    height: 32px;
+    padding: 0;
+    text-align: center;
+    width: 32px;
+    cursor: pointer;
+    transition: all .2s;
+    -moz-user-select: none;
+    -html-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.grid-row:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.controllerContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.controllerContainerItem {
+    background-color: #c7c7c7;
+    border-radius: 5px;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    -webkit-transition: background-color 0.2s;
+}
+
+.middleControllerContainerItem {
+    margin: 0 7px 0 7px;
+}
+
+.controllerContainerItem:hover {
+    background-color: #adadad;
+}
+
+.controllerContainerItemColorSquare {
+    height: 12px;
+    width: 12px;
+    border: 1px solid #000;
+    margin-right: 6px;
+}
+
+.bottomController {
+    margin-top: 10px;
+}
+
+
+.bottom-controller-btn {
+    width: 209px;
+}
+
+@media screen and (max-width: 345px) {
+    .bottom-controller-top-btn {
+        margin-bottom: 5px;
+    }
+
+    .bottom-controller-bottom-btn {
+        width: 208px;
+        margin: 0;
+    }
+}
+
+.gridSizeSelector {
+    margin-bottom: 15px;
+    margin-left: 1px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 0 10px;
+}
+
+.gridSizeSelector {
+    font-size: 22px;
+}
+
+.sizeSelectorItem {
+    margin-top: 6px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    width: 100%;
+}
+
+@media screen and (max-width: 1850px) {
+    .gridSizeSelector30x30 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .gridSizeSelector25x25 {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 1244px) {
+    .gridSizeSelector15x15 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .gridSizeSelector13x13 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .gridSizeSelector10x10 {
+        display: none;
+    }
+}
+
+.badGridWarning {
+    margin-top: 5px;
+    margin-bottom: -10px;
+    font-weight: bolder;
+    font-style: italic;
+    color: red;
+    font-size: 22px;
+}
+
+.visualiser-demo-gif {
+    height: 275px;
+}
+
+.visualiser-demo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -15px;
+}
+
+.opposite-travel-whats-this-cont {
+    margin-bottom: 7px !important;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.opposite-travel-whats-this-cont:hover {
+    color: #2020c6;
+    text-decoration: underline;
+}
+
+.opposite-travel-modal-demo-cont {
+    display: flex;
+    justify-content: center;
+}
+
+.opposite-travel-modal-demo-gif {
+    height: 275px;
+}
+
+@media screen and (max-width: 767px) {
+    .controllerContainerItem {
+        font-size: 16px !important;
+    }
+}
+
+.MuiAppBar-colorSecondary {
+    color: #fff;
+    background-color: #858c93 !important;
+}
+
+.a-star-container {
+    margin-top: 30px;
+}
+
+.grid-row {
+    justify-content: center;
+}
+
+.card-content {
+    padding: 15px 15px 0 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.about-the-alg-col {
+    margin-bottom: 10px;
+}
+
+.MuiFormControlLabel-root {
+    margin-bottom: -13px !important;
+}
+
+.MuiRadio-root {
+    color: #007bff !important;
+}
+
+.change-heuristic-accordion-text {
+    text-align: left;
+    padding: 8px 16px 0;
+
+
+}
+
+.info-text {
+    text-align: left;
+    font-size: 18px;
+}
+
+@media only screen and (min-width: 992px) {
+    .info-text {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .info-text {
+        font-size: 20px;
+    }
+}
+
+.accordion-text {
+    font-size: 17px;
+}
+
+@media only screen and (min-width: 992px) {
+    .accordion-text {
+        font-size: 18px;
+    }
+}
+
+.f-value-formula-cont {
+    text-align: center;
+    font-size: 26px;
+}
+
+.f-value-explanation {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.MuiAccordionSummary-content {
+    text-align: left !important;
+}
+
+.big-header {
+    font-weight: 700;
+    text-align: left;
+    padding: 25px 0 25px 0;
+}
+
+.radio-btn-long {
+    .font-size: .99rem;
+    text-align: left;
+}
+
+.heuristic-info-h4 {
+    text-align: left;
+    margin: 20px 0 20px;
+    font-weight: bold;
+}
+
+.code {
+    margin-top: 16px !important;
+    margin-bottom: 16px!important;
+    width: auto;
+    background-color: #fff;
+    word-wrap: break-word;
+    padding: 8px 12px;
+    border-left: 4px solid #007bff;
+    text-align: left;
+    font-family: Consolas, "courier new", monospace;
+    font-size: 16px;
+}
+
+.hr-links {
+    margin: 0 50px 0 50px;
+    border-top: 1px solid #7a7a7a;
+}
+
+@media only screen and (min-width: 1300px) {
+    .hr-links {
+        margin: 0 80px 0 80px;
+    }
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    padding: 9px 0 9px 0;
+}
+
+.appbar-btn {
+    border: none !important;
+    border-radius: 5px;
+    outline: none !important;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-color: transparent;
+    font-weight: 600;
+    color: #fff;
+}
+
+.appbar-btn:hover {
+    background-color: #939ba2;
+    color: #fff !important;
+    transition: background 0.3s;
+}
+
+.report-bug-col {
+    padding-left: 0 !important;
+    text-align: left;
+}
+
+.report-bug-text-field {
+    width: 100%;
+}
+
+.report-bug-submit-btn {
+    margin-top: 15px;
+    width: 150px;
+
+}
+
+.btn-outline-secondary {
+    font-size: 19px !important;
+    font-weight: 500 !important;
+}
+
+.report-bug-alert-title {
+    font-size: 17px !important;
+}
+
+.report-bug-error-list {
+    margin-bottom: -10px;
+}
