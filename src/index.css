@@ -32,7 +32,6 @@ li {
 
 .App {
     text-align: center;
-    padding-bottom: 50px;
 }
 
 .a-star-container {
@@ -398,4 +397,10 @@ li {
 
 .report-bug-error-list {
     margin-bottom: -10px;
+}
+
+.footer {
+    margin-top: 50px;
+    padding-bottom: 20px;
+    font-size: 16px;
 }

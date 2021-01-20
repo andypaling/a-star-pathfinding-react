@@ -8,7 +8,6 @@ class Node {
     }
 }
 
-
 function aStar(maze, start, end, oppositeTravelAllowed, heuristic) {
     // Check is end node is not a wall
     if (maze[end[0]][end[1]] === 1) return;
@@ -51,7 +50,6 @@ function aStar(maze, start, end, oppositeTravelAllowed, heuristic) {
                 path.push(current.position);
                 current = current.parent;
             }
-            console.log(path.length)
             return path.reverse();
         }
         let children = [];
