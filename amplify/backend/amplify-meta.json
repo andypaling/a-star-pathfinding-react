@@ -35,7 +35,7 @@
         "GraphQLAPIEndpointOutput": "https://3kzwaggtcvbfzgpqqaqc27ygga.appsync-api.eu-west-2.amazonaws.com/graphql",
         "GraphQLAPIKeyOutput": "da2-z2sdopk2bfezhiz7s3yqgdjysa"
       },
-      "lastPushTimeStamp": "2021-01-19T22:24:41.005Z",
+      "lastPushTimeStamp": "2021-01-20T10:21:30.479Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify60238709dce04-staging-135847-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiastarpathfindingreact"
