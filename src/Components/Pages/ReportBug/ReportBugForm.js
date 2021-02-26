@@ -79,6 +79,8 @@ class ReportBugForm extends Component {
             statusMessageOpen: true,
             statusMessageSuccess: true
         });
+        
+        location.reload()
     }
 
     handleUnsuccessfulPOST() {
